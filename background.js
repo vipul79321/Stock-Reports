@@ -5,6 +5,7 @@ import { updateSimpleAverages } from "./indicators/simpleAverages.js";
 import { updateExponentialAverages } from "./indicators/exponentialAverages.js";
 import { updateMACD } from "./indicators/macd.js";
 import { updateRSI } from "./indicators/rsi.js";
+import { updateBollingerBands } from "./indicators/bollingerBand.js";
 
 function updateHistoricalData(stockUrl) {
 
@@ -44,6 +45,7 @@ function updateHistoricalData(stockUrl) {
         updateExponentialAverages();
         updateMACD();
         updateRSI();
+        updateBollingerBands();
     });
 }
 

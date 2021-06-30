@@ -34,7 +34,7 @@ export function calcSimpleAverage(days, start=0) {
     for(var index = start; index < start+days; index++) {
         simpleAverage += CLOSE[index];
     }
-    return roundOff(simpleAverage/days);
+    return simpleAverage/days;
 }
 
 export function calcExponentialAverage(days, start=0) {
@@ -43,7 +43,17 @@ export function calcExponentialAverage(days, start=0) {
     for(var index=start+days-1; index>=start; index--) {
         exponentialAverage = CLOSE[index]*multiplier + exponentialAverage*(1-multiplier);
     }
-    return roundOff(exponentialAverage);
+    return exponentialAverage;
+}
+
+export function calcStandardDeviation(days, start=0) {
+    var simpleAverage = calcSimpleAverage(days, start);
+    var standardDeviation = 0;
+    for(var index=start; index<start+days; index++) {
+        standardDeviation += (simpleAverage - CLOSE[index])*(simpleAverage - CLOSE[index]);
+    }
+    standardDeviation = Math.sqrt(standardDeviation / days);
+    return standardDeviation;
 }
 
 export function calcAverageGain(days, start=0) {
@@ -72,7 +82,7 @@ export function emptyAll() {
     document.getElementById("MACD").innerHTML = '';
     document.getElementById("RSI").innerHTML = '';
     document.getElementById("Bollinger Bands").innerHTML = '';
-    document.getElementById("LTP").innerHTML = '';
+    document.getElementById("Latest Price Info").innerHTML = '';
     document.getElementById("Error").innerHTML = '';
     OPEN.length = 0, HIGH.length = 0, LOW.length = 0, CLOSE.length = 0, VOLUME.length = 0;
 }

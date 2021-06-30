@@ -8,3 +8,4 @@ export const MACD_URL = "https://www.investopedia.com/terms/m/macd.asp";
 export const RSI_URL = "https://www.investopedia.com/terms/r/rsi.asp";
 export const SIMPLE_AVERAGES_URL = "https://www.investopedia.com/terms/s/sma.asp";
 export const EXPONENTIAL_AVERAGES_URL = "https://www.investopedia.com/terms/e/ema.asp";
+export const BOLLINGER_BANDS_URL = "https://www.investopedia.com/terms/b/bollingerbands.asp";

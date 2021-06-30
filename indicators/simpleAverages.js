@@ -1,4 +1,4 @@
-import { createURLDOM, createDOM, calcSimpleAverage } from "../utils.js";
+import { createURLDOM, createDOM, calcSimpleAverage, roundOff } from "../utils.js";
 import { SIMPLE_AVERAGES_URL } from "../constants.js";
 
 export function updateSimpleAverages() {
@@ -13,8 +13,8 @@ export function updateSimpleAverages() {
 
     var simpleAveragesListDOM = document.createElement("ol");
     simpleAveragesListDOM.style = "list-style-type:disc";
-    simpleAveragesListDOM.appendChild(createDOM("li", "10 Days Simple Average is: " + simpleAverage10Days));
-    simpleAveragesListDOM.appendChild(createDOM("li", "20 Days Simple Average is: " + simpleAverage20Days));
-    simpleAveragesListDOM.appendChild(createDOM("li", "50 Days Simple Average is: " + simpleAverage50Days));
+    simpleAveragesListDOM.appendChild(createDOM("li", "10 Days Simple Average is: " + roundOff(simpleAverage10Days)));
+    simpleAveragesListDOM.appendChild(createDOM("li", "20 Days Simple Average is: " + roundOff(simpleAverage20Days)));
+    simpleAveragesListDOM.appendChild(createDOM("li", "50 Days Simple Average is: " + roundOff(simpleAverage50Days)));
     averagesDOM.appendChild(simpleAveragesListDOM);
 }
