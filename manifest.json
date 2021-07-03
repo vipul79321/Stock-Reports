@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "Stock Reports",
   "version": "0.0.1",
+  "description": "An extension for technical analysis on any stock on Yahoo-Finance",
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "Enter Yahoo-Finance Stock Symbol"
