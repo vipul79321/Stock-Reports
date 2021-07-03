@@ -40,7 +40,7 @@ function updateHistoricalData(stockUrl) {
             }
         }
 
-        if( CLOSE.length() < 100) {
+        if( CLOSE.length < 100) {
             console.log("Insufficient data points");
             document.getElementById("Error").appendChild(createDOM("p", "Insufficient Data points"));
             return;
